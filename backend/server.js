@@ -3,7 +3,7 @@ const app = express();
 const port = 5000;
 
 const mysql = require('mysql');
-const db = mysql.createConnection({   host: "localhost",   user: "root",   password: "root" , database: "product_checker"   });
+const db = mysql.createConnection({   host: "localhost", port:'8889',   user: "root",   password: "root", database:'product_checker'});
 
 
 
@@ -11,15 +11,11 @@ const db = mysql.createConnection({   host: "localhost",   user: "root",   passw
 
 app.get('/api', (req, res) => {
 
-
-    db.connect(function(err) {   
-        if (err) {
-            res.send(err);
-            return
-        }
-        console.log("Connecté à la base de données MySQL!"); 
-        res.send('Hello depuis le backend !');
-      });
+    db.connect(function(err) { 
+          if (err) throw err;   
+          console.log(); 
+        
+        });
 
 
 
