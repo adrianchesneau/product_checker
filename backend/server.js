@@ -3,7 +3,7 @@ const app = express();
 const port = 5000;
 
 const mysql = require('mysql');
-const db = mysql.createConnection({   host: "localhost",   user: "root",   password: "" });
+const db = mysql.createConnection({   host: "localhost",   user: "root",   password: "root" , database: "product_checker"   });
 
 
 
